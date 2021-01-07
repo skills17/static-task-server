@@ -1,0 +1,19 @@
+{
+  "name": "skills17-static-task-server",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/static-task-server",
+  "remoteUser": "node",
+  "extensions": [
+    "dbaeumer.vscode-eslint"
+  ],
+  "settings": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.tabSize": 2,
+    "editor.rulers": [100]
+  },
+  "postCreateCommand": "npm install"
+}
