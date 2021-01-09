@@ -26,6 +26,7 @@
     "import/extensions": ["error", {
       "d.ts": "always"
     }],
+    "no-console": ["off"],
     "no-useless-constructor": ["off"],
     "no-shadow": ["off"],
     "@typescript-eslint/no-shadow": ["error"]
