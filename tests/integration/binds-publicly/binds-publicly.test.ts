@@ -25,6 +25,7 @@ describe('binds publicly', () => {
 
     expect(printer).toHaveBeenCalledTimes(1);
     expect(printer).toHaveBeenCalledWith('Task available at http://localhost:3000');
+    expect(server.getHost()).toEqual('http://localhost:3000');
 
     const localhostData = await (await fetch('http://localhost:3000/test.txt')).text();
     const publicData = await (await fetch(`http://${ipAddress}:3000/test.txt`)).text();

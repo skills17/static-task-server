@@ -25,6 +25,7 @@ describe('binds on localhost', () => {
 
     expect(printer).toHaveBeenCalledTimes(1);
     expect(printer).toHaveBeenCalledWith('Task available at http://localhost:3000');
+    expect(server.getHost()).toEqual('http://localhost:3000');
 
     const localhostData = await (await fetch('http://localhost:3000/test.txt')).text();
 

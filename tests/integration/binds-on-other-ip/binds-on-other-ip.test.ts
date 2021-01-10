@@ -36,6 +36,7 @@ describe('binds on other ip', () => {
 
     expect(printer).toHaveBeenCalledTimes(1);
     expect(printer).toHaveBeenCalledWith(`Task available at http://${ipAddress}:3000`);
+    expect(server.getHost()).toEqual(`http://${ipAddress}:3000`);
 
     const ipData = await (await fetch(`http://${ipAddress}:3000/test.txt`)).text();
 

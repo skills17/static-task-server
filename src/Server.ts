@@ -18,6 +18,15 @@ export default class Server {
   }
 
   /**
+   * Returns the host under which the server is available
+   */
+  public getHost(): string {
+    const serveConfig = this.config.getServe();
+
+    return `http://${this.isLocalhost() ? 'localhost' : serveConfig.bind}:${serveConfig.port}`;
+  }
+
+  /**
    * Starts serving static task files
    *
    * @param printOnReady Print to the console on which address the files are served
@@ -45,11 +54,7 @@ export default class Server {
       // handle listening callback
       const onListen = () => {
         if (printOnReady) {
-          printer(
-            `Task available at http://${this.isLocalhost() ? 'localhost' : serveConfig.bind}:${
-              serveConfig.port
-            }`,
-          );
+          printer(`Task available at ${this.getHost()}`);
         }
 
         resolve();
