@@ -14,7 +14,7 @@ export default class Server {
   private isLocalhost(): boolean {
     const serveConfig = this.config.getServe();
 
-    return !serveConfig.bind || serveConfig.bind === '127.0.0.1' || serveConfig.bind === '0.0.0.0';
+    return !serveConfig.bind || serveConfig.bind === '127.0.0.1';
   }
 
   /**
