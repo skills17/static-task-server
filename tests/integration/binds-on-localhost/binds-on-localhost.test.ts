@@ -16,7 +16,7 @@ describe('binds on localhost', () => {
 
   it('is not reachable from another ip', async () => {
     const config = new TaskConfig();
-    await config.loadFromFile(path.resolve(__dirname, 'config.json'));
+    await config.loadFromFile(path.resolve(__dirname, 'config.yaml'));
 
     const printer = jest.fn();
 

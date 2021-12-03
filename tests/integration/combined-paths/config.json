@@ -1,9 +1,0 @@
-{
-  "serve": {
-    "enabled": true,
-    "mapping": {
-      "/": "./root",
-      "/assets": "./assets"
-    }
-  }
-}

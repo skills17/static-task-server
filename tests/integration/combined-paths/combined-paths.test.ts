@@ -14,7 +14,7 @@ describe('combined paths', () => {
 
   it('serves folders under the root and sub path', async () => {
     const config = new TaskConfig();
-    await config.loadFromFile(path.resolve(__dirname, 'config.json'));
+    await config.loadFromFile(path.resolve(__dirname, 'config.yaml'));
 
     const printer = jest.fn();
 

@@ -1,9 +1,0 @@
-{
-  "serve": {
-    "enabled": true,
-    "bind": "{BIND}",
-    "mapping": {
-      "/": "./assets"
-    }
-  }
-}

@@ -14,7 +14,7 @@ describe('root path', () => {
 
   it('serves a folder under the root path', async () => {
     const config = new TaskConfig();
-    await config.loadFromFile(path.resolve(__dirname, 'config.json'));
+    await config.loadFromFile(path.resolve(__dirname, 'config.yaml'));
 
     const printer = jest.fn();
 

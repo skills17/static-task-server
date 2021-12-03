@@ -16,7 +16,7 @@ describe('binds on other port', () => {
 
   it('serves the files on a different port', async () => {
     const config = new TaskConfig();
-    await config.loadFromFile(path.resolve(__dirname, 'config.json'));
+    await config.loadFromFile(path.resolve(__dirname, 'config.yaml'));
 
     const printer = jest.fn();
 

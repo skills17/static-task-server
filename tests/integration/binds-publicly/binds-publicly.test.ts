@@ -16,7 +16,7 @@ describe('binds publicly', () => {
 
   it('is reachable from another ip', async () => {
     const config = new TaskConfig();
-    await config.loadFromFile(path.resolve(__dirname, 'config.json'));
+    await config.loadFromFile(path.resolve(__dirname, 'config.yaml'));
 
     const printer = jest.fn();
 
@@ -24,8 +24,8 @@ describe('binds publicly', () => {
     await server.serve(true, printer);
 
     expect(printer).toHaveBeenCalledTimes(1);
-    expect(printer).toHaveBeenCalledWith('Task available at http://localhost:3000');
-    expect(server.getHost()).toEqual('http://localhost:3000');
+    expect(printer).toHaveBeenCalledWith('Task available at http://0.0.0.0:3000');
+    expect(server.getHost()).toEqual('http://0.0.0.0:3000');
 
     const localhostData = await (await fetch('http://localhost:3000/test.txt')).text();
     const publicData = await (await fetch(`http://${ipAddress}:3000/test.txt`)).text();

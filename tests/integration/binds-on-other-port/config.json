@@ -1,9 +1,0 @@
-{
-  "serve": {
-    "enabled": true,
-    "port": 4000,
-    "mapping": {
-      "/": "./assets"
-    }
-  }
-}

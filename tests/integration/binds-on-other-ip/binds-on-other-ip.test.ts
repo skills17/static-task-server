@@ -10,9 +10,9 @@ describe('binds on other ip', () => {
   let server: Server;
 
   beforeEach(async () => {
-    const content = await fs.readFile(path.resolve(__dirname, 'config.template.json'));
+    const content = await fs.readFile(path.resolve(__dirname, 'config.template.yaml'));
     await fs.writeFile(
-      path.resolve(__dirname, 'config.json'),
+      path.resolve(__dirname, 'config.yaml'),
       content.toString().replace(/\{BIND\}/g, ipAddress),
     );
   });
@@ -22,12 +22,12 @@ describe('binds on other ip', () => {
       await server.stop();
     }
 
-    await fs.unlink(path.resolve(__dirname, 'config.json'));
+    await fs.unlink(path.resolve(__dirname, 'config.yaml'));
   });
 
   it('is only reachable from the defined ip', async () => {
     const config = new TaskConfig();
-    await config.loadFromFile(path.resolve(__dirname, 'config.json'));
+    await config.loadFromFile(path.resolve(__dirname, 'config.yaml'));
 
     const printer = jest.fn();
 
